@@ -1,9 +1,10 @@
-IF OBJECT_ID('CLUB') IS NOT NULL
-DROP TABLE STAFF_ALLOCATION;
-IF OBJECT_ID('STUDENT') IS NOT NULL
-DROP TABLE ATTENDANCE;
 IF OBJECT_ID('MEMBERSHIP') IS NOT NULL
+DROP TABLE MEMBERSHIP;
+IF OBJECT_ID('CLUB') IS NOT NULL
+DROP TABLE CLUB;
+IF OBJECT_ID('STUDENT') IS NOT NULL
 DROP TABLE STUDENT;
+
 
 GO
 
@@ -28,3 +29,16 @@ PRIMARY KEY (CName, StudentID, JoinDate),
 FOREIGN KEY (Cname) REFERENCES CLUB,
 FOREIGN KEY (StudentID) REFERENCES STUDENT,
 );
+
+GO
+
+INSERT INTO CLUB (Cname, Descript) VALUES
+('Beak Wetting Club of Australia', 'Financial investing'),
+('Basketball Victoria', 'Controlling Basketball for all'),
+('Ruby Programmers Club', 'Making programming fun for humans');
+
+INSERT INTO STUDENT (StudentID, FullName) VALUES
+('s12309813', 'Tony Beroni'),
+('s12309812', 'Russel Coight'),
+('s12309818', 'Action Jackson');
+
